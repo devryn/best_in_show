@@ -1,25 +1,127 @@
-# README
+# API Documentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Title
+  Best In Show (Homepage)
 
-Things you may want to cover:
+* URL
+  https://best-in-show-dogs.herokuapp.com/
 
-* Ruby version
+* Method:
+  GET
 
-* System dependencies
+* Success Response:
+  Code: 200
 
-* Configuration
+* Error Response:
+  Code: 404 NOT FOUND
+  Content: { error : "Page Not Found" }
+--------------------------------------------------------------------------------
 
-* Database creation
+* Title
+  Dogs (Show All Dogs)
 
-* Database initialization
+* URL
+  /dogs
 
-* How to run the test suite
+* Method:
+  GET
 
-* Services (job queues, cache servers, search engines, etc.)
+* Success Response:
+  Code: 200
 
-* Deployment instructions
+* Error Response:
+  Code: 404 NOT FOUND
+  Content: { error : "Page Not Found" }
+  --------------------------------------------------------------------------------
 
-* ...
+* Title
+  Show One Dog
+
+* URL
+  /dogs/:id
+
+* Method:
+  GET
+
+* URL Params
+- Required: id=[integer]
+- Optional: dog_id=[alphanumeric]
+
+* Data Params
+{
+dog : {
+  name : [string],
+  breed : [string],
+  description : [string]
+  }
+}
+
+* Success Response:
+  Code: 200
+  Content: { id : :id }
+
+* Error Response:
+  Code: 404 NOT FOUND
+  Content: { error : "Page Not Found" }
+--------------------------------------------------------------------------------
+
+* Title
+  Create New Dog
+
+* URL
+  /new
+
+* Method:
+  POST
+
+* Data Params
+  {
+  dog : {
+    name : [string],
+    breed : [string],
+    description : [string]
+    }
+  }
+
+* Success Response:
+  Code: 200
+  Content: { id : 12 }
+
+* Error Response:
+  Code: 404 NOT FOUND
+  Content: { error : "Page Not Found" }
+
+* Sample Call:
+
+* Notes:
+--------------------------------------------------------------------------------
+
+* Title
+
+
+* URL
+
+
+* Method:
+GET | POST | DELETE | PUT
+
+* URL Params
+- Required:
+- Optional:
+
+* Data Params
+
+
+* Success Response:
+  Code: 200
+  Content: { id : 12 }
+
+* Error Response:
+  Code: 404 NOT FOUND
+  Content: { error : "Page Not Found" }
+
+* Sample Call:
+
+* Notes:
+--------------------------------------------------------------------------------
 # best_in_show
