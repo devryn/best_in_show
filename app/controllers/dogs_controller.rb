@@ -22,7 +22,7 @@ class DogsController < ApplicationController
 
   def update
     dog = Dog.find(params[:id])
-    if Dog.update(dog_params)
+    if dog.update(dog_params)
       render json: dog.to_json
     else
       render json: dog.errors.to_json, status: :unprocessable_entity
