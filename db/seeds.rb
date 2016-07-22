@@ -12,3 +12,8 @@ Dog.create(name: "Bear", breed: "Pitbull/Lab Mix", description: "Uncoordinated, 
 Dog.create(name: "Mable", breed: "Lab/Border Collie Mix", description: "Loves playing ball, long walks, playing ball, swimming, playing ball")
 Dog.create(name: "Arrow", breed: "Australian Shepherd", description: "Very generous, sometimes lets his owner sleep in his own bed")
 Dog.create(name: "Tala", breed: "Husky", description: "Uses her paws any time she can, but can't quite master the lack of thumbs")
+
+
+15.times do
+  Vote.create!(dog: Dog.all.sample)
+end
