@@ -3,6 +3,15 @@ class DogsController < ApplicationController
     render json: Dog.all.to_json(include: :votes, methods: :vote_count)
   end
 
+  def show
+  end
 
-  create update show delete
+  def create
+  end
+
+  def update
+  end
+
+  def delete
+  end
 end

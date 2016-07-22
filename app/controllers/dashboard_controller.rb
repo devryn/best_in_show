@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
     if dog.save
       redirect_to dog
     else
-    render :new
+    render json: Dog.new
     end
   end
 
