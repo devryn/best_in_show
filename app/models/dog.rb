@@ -8,4 +8,10 @@ class Dog < ApplicationRecord
   def vote_count
     votes.count
   end
+
+  def self.top
+    order("join votes on votes.dog_id = dogs.id")
+  end
 end
+
+#return count of how many votes have same dog_id dog.id
