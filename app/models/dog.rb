@@ -11,7 +11,7 @@ class Dog < ApplicationRecord
   end
 
   def self.top
-    joins("join votes on votes.dog_id = dogs.id")
+    joins("left join votes on votes.dog_id = dogs.id")
     .group("dogs.id, dogs.name")
     .order("count(votes.id) desc")
   end

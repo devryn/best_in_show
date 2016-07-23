@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   def index
-      render json: Dog.all.to_json(include: :votes, methods: :vote_count)
+      render json: Dog.top.to_json(include: :votes, methods: :vote_count)
   end
 
   def show
@@ -14,6 +14,7 @@ class DogsController < ApplicationController
   def create
     dog = Dog.new(dog_params)
     if dog.save
+      flash[:notice] = "Thanks for your submission!"
       render json: dog.to_json
     else
     render json: dog.errors.to_json, status: :unprocessable_entity
