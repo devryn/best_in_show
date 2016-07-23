@@ -14,8 +14,8 @@ class DogsController < ApplicationController
   def create
     dog = Dog.new(dog_params)
     if dog.save
-      flash[:notice] = "Thanks for your submission!"
       render json: dog.to_json
+      { message: "Thanks for your submission!" }
     else
     render json: dog.errors.to_json, status: :unprocessable_entity
     end
@@ -42,6 +42,6 @@ class DogsController < ApplicationController
 
     private
     def dog_params
-      params.require(:dog).permit(:name, :breed, :description)
+      params.require(:dog).permit(:name, :breed, :description, :img_url)
     end
 end

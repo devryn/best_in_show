@@ -17,3 +17,7 @@ Dog.create(name: "Sadie", breed: "Portugese Water Dog/Shitzu Mix", description: 
 15.times do
   Vote.create!(dog: Dog.all.sample)
 end
+
+15.times do
+  User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "password")
+end
