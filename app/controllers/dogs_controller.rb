@@ -31,12 +31,17 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    if Dog.exists?(params[:id])
-      Dog.destroy(params[:id])
-      render json: { message:
-      "The dog has been deleted. Why would you do such a thing?!" }
+    dog = Dog.find(params[:id])
+    if dog
     else
-      render json: {message: "The dog was not deleted due to errors." }, status: 404
+      render json: { message: "This dog does not exist!" }, status: 404
+      if authenticate_token?(params.fetch(browser_auth_token))
+        Dog.destroy(params[:id])
+        render json: { message:
+          "The dog has been deleted. Why would you do such a thing?!" }
+      else
+        render json: { message: "You do not have permission to delete this dog." }, status: 401
+      end
     end
   end
 

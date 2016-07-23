@@ -11,7 +11,11 @@ class User < ApplicationRecord
   private
   def set_auth_token
     if self.auth_token.nil?
-      self.auth_token = SecureRandom.uuid.delete("-")
+      self.auth_token = generate_auth_token
     end
+  end
+
+  def generate_auth_token
+    SecureRandom.uuid.delete("-")
   end
 end
