@@ -66,5 +66,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
-# Also exclude :auth_token in show if using later
