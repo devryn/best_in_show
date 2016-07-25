@@ -3,6 +3,7 @@
 
 * We planned out the views of the app before I planned out the database/back end portion. I generated a Dog resource first as that was our main object, then a Votes resource so the Dogs could be voted on, then a Users resource so Users could log in and out. I added seed data for dogs, votes, and users for testing purposes. All controllers are filled out with full CRUD methods so that the functionality is there as we were building the app.
 
+* Link to app: https://valdmets.github.io/bestinshow/#matchup
 * Heroku app: https://best-in-show-dogs.herokuapp.com/
 * Trello board: https://trello.com/b/roH9hWJM/best-in-show
 * Confidence: 4
